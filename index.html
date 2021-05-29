@@ -1,0 +1,272 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flow Tree</title>
+  <script src="https://unpkg.com/force-graph"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="flow-tree"></div>
+  <script>
+    const data = {
+      nodes: [
+        {
+          "id": "0",
+          "name": "Flow",
+          "val": "Flow",
+          "group": "1"
+        },
+        {
+          "id": "1",
+          "name": "Damla Ehican",
+          "val": "Damla Ehican#4616",
+          "group": "2"
+        },
+        {
+          "id": "2",
+          "name": "Abdullah Aki",
+          "val": "Danger#8229",
+          "group": "3"
+        },
+        {
+          "id": "3",
+          "name": "Ogeday",
+          "val": "ogeday26#7186",
+          "group": "4"
+        },
+        {
+          "id": "4",
+          "name": "Kaan Karakaya",
+          "val": "Kaan (TheYkk)#2449",
+          "group": "5"
+        },
+        {
+          "id": "5",
+          "name": "Kemal Ayhan",
+          "val": "Kemal#2446",
+          "group": "6"
+        },
+        {
+          "id": "6",
+          "name": "Furkan Çat",
+          "val": "Furkan Çat#5240",
+          "group": "1"
+        },
+        {
+          "id": "7",
+          "name": "Ahmet Ozer",
+          "val": "ahmet.engineer#2468",
+          "group": "1"
+        },
+        {
+          "id": "8",
+          "name": "Akif Feyzioğlu",
+          "val": "Raptor ⚡#5319",
+          "group": "1"
+        },
+        {
+          "id": "9",
+          "name": "Ali Göl",
+          "val": "Mr. Code#1699",
+          "group": "1"
+        },
+        {
+          "id": "10",
+          "name": "Mehmetcan Emanet",
+          "val": "Mehmetcan#6189",
+          "group": "1"
+        },
+        {
+          "id": "11",
+          "name": "Murat Mirgün Ercan",
+          "val": "muratmirgun#5634",
+          "group": "1"
+        },
+        {
+          "id": "12",
+          "name": "Necmttn",
+          "val": "Necmttn#9842",
+          "group": "1"
+        },
+        {
+          "id": "13",
+          "name": "yilmazogras",
+          "val": "yilmazogras#0686",
+          "group": "1"
+        },
+        {
+          "id": "14",
+          "name": "Anıl Kuşçu",
+          "val": "Anıl Kuşçu#8083",
+          "group": "1"
+        },
+        {
+          "id": "15",
+          "name": "Bora",
+          "val": "Bora#2256",
+          "group": "1"
+        },
+        {
+          "id": "16",
+          "name": "Osman Mesut Özcan",
+          "val": "osmanmesutozcan#9039",
+          "group": "1"
+        },
+        {
+          "id": "17",
+          "name": "Yusuf Bilgin",
+          "val": "hüzünlü hamsi#6515",
+          "group": "1"
+        },
+        {
+          "id": "18",
+          "name": "Muahmmed Karakaya",
+          "val": "mkarakaya#8628",
+          "group": "1"
+        },
+        {
+          "id": "19",
+          "name": "Batuhan Yenidunya",
+          "val": "batuhanyenidunya#0760",
+          "group": "1"
+        },
+        {
+          "id": "20",
+          "name": "Adem Özcan",
+          "val": "afodev#5096",
+          "group": "1"
+        }
+      ],
+      links: [
+        {
+          "source": "0",
+          "target": "1",
+          "value": 1
+        },
+        {
+          "source": "0",
+          "target": "2",
+          "value": 1
+        },
+        {
+          "source": "0",
+          "target": "3",
+          "value": 1
+        },
+        {
+          "source": "0",
+          "target": "4",
+          "value": 1
+        },
+        {
+          "source": "0",
+          "target": "5",
+          "value": 1
+        },
+        {
+          "source": "3",
+          "target": "6",
+          "value": 1
+        },
+        {
+          "source": "4",
+          "target": "7",
+          "value": 1
+        },
+        {
+          "source": "4",
+          "target": "14",
+          "value": 1
+        },
+        {
+          "source": "4",
+          "target": "8",
+          "value": 1
+        },
+        {
+          "source": "4",
+          "target": "9",
+          "value": 1
+        },
+        {
+          "source": "2",
+          "target": "10",
+          "value": 1
+        },
+        {
+          "source": "4",
+          "target": "11",
+          "value": 1
+        },
+        {
+          "source": "2",
+          "target": "13",
+          "value": 1
+        },
+        {
+          "source": "3",
+          "target": "12",
+          "value": 1
+        },
+        {
+          "source": "2",
+          "target": "15",
+          "value": 1
+        },
+        {
+          "source": "12",
+          "target": "16",
+          "value": 1
+        },
+        {
+          "source": "2",
+          "target": "17",
+          "value": 1
+        },
+        {
+          "source": "2",
+          "target": "18",
+          "value": 1
+        },
+        {
+          "source": "10",
+          "target": "19",
+          "value": 1
+        },
+        {
+          "source": "11",
+          "target": "20",
+          "value": 1
+        }
+      ],
+    };
+
+    const getColor = n => '#' + ((n * 1234567) % Math.pow(2, 24)).toString(16).padStart(6, '0');
+
+    function nodePaint(node, color, ctx) {
+      ctx.fillStyle = color;
+      (() => { ctx.font = '3px Sans-Serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(node.name, node.x, node.y); })()
+    }
+
+    ForceGraph()(document.getElementById("flow-tree")).graphData(data)
+    .nodeCanvasObject((node, ctx) => nodePaint(node, getColor(node.id), ctx))
+    .nodeId('id')
+    .nodeVal('value')
+    .nodeLabel('name')
+    .nodeAutoColorBy('group')
+    .linkAutoColorBy(d => data.nodes[d.source].group)
+    .linkSource('source')
+    .linkTarget('target')
+    .linkDirectionalParticles("value")
+    .linkDirectionalParticleSpeed(d => d.value * 0.03)
+    .linkWidth(3);
+  </script>
+</body>
+</html>
